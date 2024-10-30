@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Form</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        div{
+            margin: 1rem 0;
+        }
+
+        input{
+            width: 30vw;
+            display: block;
+            padding: 1rem;
+            border: 1px solid #dcdcdc;
+        }
+
+        button{
+            border: none;
+            background-color: #000;
+            color: #fff;
+            padding: 0.4rem;
+            border-radius: 0.4rem;
+            width: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    
+    
+    
+    {% if error %}
+        <h1>{{error}}</h1>
+    {% endif %}
+    {% if success %}
+        <h1>{{success}}</h1>
+    {% endif %}
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input name="first_name" type="text" placeholder="enter firstname">
+            <label>firstname</label>
+        </div>
+        
+        <div>
+            <input  name="phone" type="text" placeholder="enter phone number">
+            <label>phone number</label>
+        </div>
+        <div>
+            <input name="email" type="text" placeholder="enter email">
+            <label>email</label>
+        </div>
+        <div>
+            <input name="password" type="text" placeholder="enter password">
+            <label>password</label>
+        </div>
+
+        <button>Register</button>
+
+    </form>
+
+</body>
+</html>
